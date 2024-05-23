@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-pipeline
+spec:
+  selector:
+    app: ml-pipeline
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
