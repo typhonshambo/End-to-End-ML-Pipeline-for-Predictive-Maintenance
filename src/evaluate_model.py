@@ -1,5 +1,3 @@
-# File: src/evaluate_model.py
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
