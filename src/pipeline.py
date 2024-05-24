@@ -1,6 +1,5 @@
 import pandas as pd
 from data_preprocessing import DataPreprocessor
-from feature_engineering import FeatureEngineer
 from train_model import ModelTrainer
 from evaluate_model import Evaluator
 
@@ -8,6 +7,7 @@ def main_pipeline(data_path):
     # Step 1: Data Preprocessing
     preprocessor = DataPreprocessor(data_path)
     df = preprocessor.load_data()
+    df = preprocessor.process_data()
     df = preprocessor.handle_missing_values()
     df = preprocessor.under_sample_data(target_column='failure')
 
@@ -31,5 +31,5 @@ def main_pipeline(data_path):
     evaluator.plot_confusion_matrix()
 
 if __name__ == "__main__":
-    data_path = '/Users/shambo/Documents/ML projects/End-to-End ML Pipeline for Predictive Maintenance/data/processed/predictive_maintenance_EDA_processed.csv'  # Adjust the path to your raw data
+    data_path = '/Users/shambo/Documents/ML projects/End-to-End ML Pipeline for Predictive Maintenance/data/raw/predictive_maintenance_dataset.csv'  # Adjust the path to your raw data
     main_pipeline(data_path)
