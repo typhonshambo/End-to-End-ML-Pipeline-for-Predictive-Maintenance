@@ -6,10 +6,3 @@ The objective of this project is to develop a comprehensive machine learning pip
 
 
 I will update the README as soon as possible
-
-```bash
-docker build -t ml-pipeline-app -f deployment/Dockerfile .
-```
-```bash
-docker run --rm ml-pipeline-app
-```
