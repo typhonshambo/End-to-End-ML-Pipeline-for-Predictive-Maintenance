@@ -10,8 +10,19 @@ class Evaluator:
         self.y_test = y_test
         self.y_pred = self.model.predict(self.X_test)
     
-    def compute_metrics(self):
-        """Compute and return evaluation metrics."""
+    def compute_metrics(self) -> dict:
+        '''
+        Compute model evaluation metrics.
+        Returns:
+            metrics (dict): A dictionary containing the model evaluation metrics.
+            Example:
+            {
+                'accuracy': 0.85,
+                'precision': 0.90,
+                'recall': 0.80,
+                'f1_score': 0.85
+            }
+        '''
         accuracy = accuracy_score(self.y_test, self.y_pred)
         precision = precision_score(self.y_test, self.y_pred, zero_division=1)
         recall = recall_score(self.y_test, self.y_pred, zero_division=1)
