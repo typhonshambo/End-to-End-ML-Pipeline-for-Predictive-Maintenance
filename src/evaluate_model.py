@@ -37,7 +37,7 @@ class Evaluator:
         plt.xlabel('Predicted')
         plt.ylabel('Actual')
         plt.title('Confusion Matrix')
-        plt.show()
+        #plt.show()
 
 # Example usage:
 # if __name__ == "__main__":

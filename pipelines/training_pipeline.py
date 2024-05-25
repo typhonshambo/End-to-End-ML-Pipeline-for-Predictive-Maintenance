@@ -5,7 +5,7 @@ from .config import DataPaths
 from src.data_preprocessing import DataPreprocessor
 from src.train_model import ModelTrainer
 from src.evaluate_model import Evaluator
-
+from utils.utils import load_object, save_object
 
 def training_pipe(data_path : str = DataPaths.raw_data):
     print(data_path)
@@ -25,6 +25,7 @@ def training_pipe(data_path : str = DataPaths.raw_data):
     trainer = ModelTrainer(df)
     X_train, X_test, y_train, y_test = trainer.prepare_data(target_column='failure')
     model = trainer.train_model()
+    save_object(model, DataPaths.model_path)
     X_test.to_csv('data/processed/X_test.csv', index=False)
     y_test.to_csv('data/processed/y_test.csv', index=False)
 
