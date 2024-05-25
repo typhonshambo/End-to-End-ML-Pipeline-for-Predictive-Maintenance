@@ -4,10 +4,8 @@ import dagshub
 import mlflow
 
 if __name__ == "__main__":
-
-
-    dagshub.init("End-to-End-ML-Pipeline-for-Predictive-Maintenance", "typhonshambo", mlflow=True)
-    mlflow.start_run()
-    training_pipe()
-    prediction_pipeline()
+    dagshub.init(repo_owner='typhonshambo', repo_name='End-to-End-ML-Pipeline-for-Predictive-Maintenance', mlflow=True)
+    with mlflow.start_run():
+        training_pipe()
+        prediction_pipeline()
 
