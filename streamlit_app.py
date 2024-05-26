@@ -6,7 +6,7 @@ from pipelines.config import DataPaths
 import shutil
 # Title
 st.title('Predictive Maintenance Model')
-st.write('A predictive maintenance model that predicts whether a device will fail or not based on the trained dataset, check the model monitoring dashboard for more details. You can download and upload the sample dataset to make predictions')
+st.write('A predictive maintenance model that predicts whether a device will fail or not based on the past metrics dataset, check the model monitoring dashboard for more details. You can download and upload the sample dataset to make predictions')
 
 sample_dataset_url = 'https://github.com/typhonshambo/End-to-End-ML-Pipeline-for-Predictive-Maintenance/blob/main/data/raw/preview.csv'
 dagshub_uri = DataPaths.mlflow_uri
@@ -15,7 +15,7 @@ if st.button('Download Sample Dataset'):
     st.markdown(f"[Download Sample Dataset]({sample_dataset_url})", unsafe_allow_html=True)
 
 if st.button('Go to Model Monitoring Dashboard'):
-    st.markdown(f"[DagsHub URI]({dagshub_uri})", unsafe_allow_html=True)
+    st.markdown(f"[MLFlow Dashboard]({dagshub_uri})", unsafe_allow_html=True)
 
 # Option to select input method
 input_method = st.radio("Choose input method:", ('Upload CSV', 'Manual Input'))
