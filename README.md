@@ -15,7 +15,7 @@ model monitoring dashboard: <br>
 [![mlflow](https://img.shields.io/badge/mlflow-%23d9ead3.svg?style=for-the-badge&logo=mlflow&logoColor=blue)](https://dagshub.com/typhonshambo/End-to-End-ML-Pipeline-for-Predictive-Maintenance.mlflow)
 
 ## Model Performance
-Currently we are using RandomForest model, based on my EDA dataset I was able to achieve the following scores:<br><br>
+Currently we are using RandomForest model, based on my EDA I was able to achieve the following scores:<br><br>
 
 <img src = 'data/model-performance.png' width=500>
 
