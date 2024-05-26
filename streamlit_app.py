@@ -6,7 +6,7 @@ from pipelines.config import DataPaths
 import shutil
 # Title
 st.title('Predictive Maintenance Model')
-st.write('A predictive maintenance model that predicts whether a device will fail or not based on the past metrics dataset, check the model monitoring dashboard for more details. You can download and upload the sample dataset to make predictions')
+st.write('A predictive maintenance ML model that predicts whether a device will fail or not based on the past metrics dataset, check the model monitoring dashboard for more details. You can download and upload the sample dataset to make predictions')
 
 sample_dataset_url = 'https://github.com/typhonshambo/End-to-End-ML-Pipeline-for-Predictive-Maintenance/blob/main/data/raw/preview.csv'
 dagshub_uri = DataPaths.mlflow_uri
