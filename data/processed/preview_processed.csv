@@ -1,0 +1,6 @@
+metric1,metric2,metric3,metric4,metric5,metric6,metric7,metric8,metric9,day_of_week,day_of_month,is_weekend,month,week,device_model_S1F1,device_model_W1F0,device_model_W1F1,device_model_Z1F0,device_model_Z1F1
+215630672,55,0,52,6,407438,0,0,7,3,1,0,1,1,False,False,False,False,False
+61370680,0,3,0,6,403174,0,0,0,3,1,0,1,1,False,False,False,False,False
+173295968,0,0,0,12,237394,0,0,0,3,1,0,1,1,False,False,False,False,False
+79694024,0,0,0,6,410186,0,0,0,3,1,0,1,1,False,False,False,False,False
+135970480,0,0,0,15,313173,0,0,3,3,1,0,1,1,False,False,False,False,False

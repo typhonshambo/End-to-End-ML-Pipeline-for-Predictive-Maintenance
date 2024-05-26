@@ -24,15 +24,9 @@ class DataPreprocessor:
             logging.error("File not found. Please check the file path.")
             return None
 
-    def process_data(self) -> pd.DataFrame:
+    def process_data_date(self) -> pd.DataFrame:
         """Process the dataset as per EDA"""
         try:
-            self.data['device_model'] = self.data['device'].apply(lambda x : x[:4])
-            self.data.drop("device",axis=1,inplace=True)
-            
-            #handling outliers
-            self.data.drop(self.data.loc[self.data["device_model"]=="Z1F2"].index,axis=0,inplace=True)
-            self.data.reset_index(drop=True,inplace=True)
 
             """
             This method processes the 'date' column in the DataFrame to extract and add new temporal features:
@@ -63,6 +57,25 @@ class DataPreprocessor:
             logging.error(f"Error processing data: {e}")
             return None
         
+    def process_data_device(self) -> pd.DataFrame:
+        '''
+        This method processes the 'device' column in the DataFrame to extract and add new features:
+        - Extracts the device model from the 'device' column and adds it as a new column 'device_model'.
+        - Drops the 'device' column from the DataFrame.
+        - Handles outliers in the 'device_model' column.
+        '''
+        try:
+            self.data['device_model'] = self.data['device'].apply(lambda x : x[:4])
+            self.data.drop("device",axis=1,inplace=True)
+            
+            #handling outliers
+            self.data.drop(self.data.loc[self.data["device_model"]=="Z1F2"].index,axis=0,inplace=True)
+            self.data.reset_index(drop=True,inplace=True)
+            return self.data
+        except Exception as e:
+            logging.error(f"Error processing data: {e}")
+            return None
+    
     def convert_to_dummy(self) -> pd.DataFrame:
         '''
         This method converts the categorical columns in the DataFrame to dummy variables.
