@@ -6,8 +6,9 @@ from pipelines.config import DataPaths
 import shutil
 # Title
 st.title('Predictive Maintenance Model')
+st.write('A predictive maintenance model that predicts whether a device will fail or not based on the trained dataset, check the model monitoring dashboard for more details. You can download and upload the sample dataset to make predictions')
 
-sample_dataset_url = 'https://path.to/sample-dataset.csv'
+sample_dataset_url = 'https://github.com/typhonshambo/End-to-End-ML-Pipeline-for-Predictive-Maintenance/blob/main/data/raw/preview.csv'
 dagshub_uri = DataPaths.mlflow_uri
 
 if st.button('Download Sample Dataset'):
@@ -47,6 +48,7 @@ if input_method == 'Upload CSV':
                     'metric9': ['7']  
                 }, index=[0])  
                 st.write(input_data)
+                st.write("You can download sample data from the 'Download Sample Dataset' button above and upload.")
 
 else:
     date = st.date_input('Date')
@@ -99,4 +101,5 @@ else:
                 'metric9': ['7']  
             }, index=[0])  
             st.write(input_data)
+            st.write("You can download sample data from the 'Download Sample Dataset' button above and upload.")
             
