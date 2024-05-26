@@ -55,7 +55,7 @@ def prediction_pipeline(
     old_df = pd.read_csv(test_data_path)
     prediction = model.predict(df)
     prediction = ['No' if p == 0 else 'Yes' for p in prediction]
-    old_df['Failure Possible'] = prediction
+    old_df.insert(0, 'Failure Possible', prediction)
     return old_df
 
 
