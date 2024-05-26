@@ -56,14 +56,25 @@ class DataPreprocessor:
             self.data['month'] = self.data['date'].dt.month
             self.data['week'] = self.data['date'].dt.isocalendar().week
             self.data = self.data.drop(['date'], axis=1)
-            self.data = pd.get_dummies(self.data,drop_first=True)
+            
             return self.data
     
         except Exception as e:
             logging.error(f"Error processing data: {e}")
             return None
         
-        
+    def convert_to_dummy(self) -> pd.DataFrame:
+        '''
+        This method converts the categorical columns in the DataFrame to dummy variables.
+        Returns:
+        - pd.DataFrame: The DataFrame with dummy variables.
+        '''
+        try:
+            self.data = pd.get_dummies(self.data,drop_first=True)
+            return self.data
+        except Exception as e:  
+            logging.error(f"Error converting to dummy: {e}")
+            return None
 
 
     def handle_missing_values(self) -> pd.DataFrame:

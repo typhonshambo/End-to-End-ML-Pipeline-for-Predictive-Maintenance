@@ -14,6 +14,7 @@ def training_pipe(data_path : str = DataPaths.raw_data):
     preprocessor = DataPreprocessor(data_path)
     df = preprocessor.load_data()
     df = preprocessor.process_data()
+    df = preprocessor.convert_to_dummy()
     df = preprocessor.handle_missing_values()
     df = preprocessor.under_sample_data(target_column='failure')
 
